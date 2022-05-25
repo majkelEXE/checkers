@@ -1,0 +1,45 @@
+1. Wysylam zmienia pozycje tablicy, ustawiam na serwerze czas na ruch drugiego pionka, 
+	pierwszemu blokuje ruch,
+
+2. Trzeba wymyslic mechanizm do poprawnego odswiezania tablicy w obydwu
+
+jeden oddaje ruch i od razu sobie wlacza interval
+
+
+startuje:
+	- gdy dolacza do gry i gra sie od razu zaczyna
+	- gdy odda ruch
+
+ustal name wszystkim pionkom
+
+
+DO NPARAWY OSTATNI RZAD + LOGIKA
+
+
+    this.szachownica = [
+      [1, 0, 1, 0, 1, 0, 1, 0], X = 0
+      [0, 1, 0, 1, 0, 1, 0, 1], X = 1
+      [1, 0, 1, 0, 1, 0, 1, 0], X = 2
+      [0, 1, 0, 1, 0, 1, 0, 1], X = 3
+      [1, 0, 1, 0, 1, 0, 1, 0], X = 4
+      [0, 1, 0, 1, 0, 1, 0, 1], X = 5
+      [1, 0, 1, 0, 1, 0, 1, 0], X = 6
+      [0, 1, 0, 1, 0, 1, 0, 1], X = 7
+    ];
+
+
+    this.pionki = [
+      [0, 2, 0, 2, 0, 2, 0, 2], X = 0
+      [2, 0, 2, 0, 2, 0, 2, 0], X = 1
+      [0, 0, 0, 0, 0, 0, 0, 0], X = 2
+      [0, 0, 0, 0, 0, 0, 0, 0], X = 3
+      [0, 0, 0, 0, 0, 0, 0, 0], X = 4
+      [0, 0, 0, 0, 0, 0, 0, 0], X = 5
+      [0, 1, 0, 1, 0, 1, 0, 1], X = 6
+      [1, 0, 1, 0, 1, 0, 1, 0], X = 7
+    ];
+
+- odwalic wszystko elegancko graficznie 
+	- zrobic funkcje od informacyjnego dialogu, czy wygrana bo koniec czasu, czy 	punkty
+	- mozna popatrzec czy ten clearInterval po prostu nie dzieje sie za szybko i w 	
+	ten sposob przesunac tamto game.startInterval na koniec

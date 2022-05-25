@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Poppins:wght@200;300;400&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+    <script src="libs/tween.umd.js"></script>
+    <script src="libs/three.js" defer></script>
+    <script type="module" src="Main.js"></script>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+        font-family: "Montserrat", sans-serif;
+        font-family: "Poppins", sans-serif;
+      }
+
+      #navbar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100px;
+        /* background-color: rgb(65, 6, 16); */
+        background-color: #141414;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 10px;
+        font-size: 25px;
+        border-bottom: 5px solid white;
+        color: white;
+      }
+
+      #loginDialog {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 4;
+        background-color: #141414;
+        width: 300px;
+        height: 280px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10%;
+        border: 5px solid white;
+        color: white;
+      }
+
+      #loginDialog input {
+        padding: 5px;
+        text-align: center;
+      }
+
+      #loginDialog div {
+        margin: 10px;
+      }
+
+      #loginDialogTitle {
+        font-size: 30px;
+      }
+
+      #loginDialog button,
+      #waitingDialog button {
+        border: 2px solid white;
+        color: white;
+        border-radius: 10%;
+        background-color: rgb(51, 51, 51);
+        padding: 10px;
+      }
+
+      #currentArray {
+        display: none;
+        border: 2px solid white;
+        border-radius: 10%;
+        background-color: #141414;
+        color: white;
+        padding: 10px;
+        position: absolute;
+        left: 2%;
+        bottom: 0%;
+        font-size: 22px;
+      }
+
+      #waitingDialog {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid white;
+        border-radius: 10%;
+        width: 600px;
+        height: 400px;
+        background-color: #141414;
+        color: white;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+      }
+
+      #restartGameBtnContainer {
+        display: none;
+      }
+
+      #timeDialog {
+        position: absolute;
+        display: none;
+        top: 2%;
+        right: 2%;
+        color: white;
+      }
+
+      #waitingDialog #mainWaitingDialogInfo {
+        font-size: 30px;
+      }
+
+      #waitingDialog #enemyTimeCounter {
+        font-size: 18px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <id id="root"></id>
+
+    <div id="navbar">STATUS</div>
+    <div id="loginDialog">
+      <div id="loginDialogTitle">LOGOWANIE</div>
+      <div><input type="text" name="userName" id="userName" /></div>
+      <div><button id="btnLogin">LOGUJ</button></div>
+      <div><button id="btnReset">RESET</button></div>
+    </div>
+    <div id="waitingDialog">
+      <p id="mainWaitingDialogInfo">Ruch ma przeciwnik...</p>
+      <p id="enemyTimeCounter"></p>
+      <div id="restartGameBtnContainer">
+        <button id="restartAfterGame">Restart</button>
+      </div>
+    </div>
+    <div id="timeDialog">30</div>
+    <pre id="currentArray"></pre>
+    <script defer></script>
+  </body>
+</html>
