@@ -4,6 +4,10 @@ class Ui {
   constructor() {
     this.hisTurn = false;
     //
+
+    window.addEventListener("resize", game.onWindowResize, false);
+
+    //
     document.getElementById("btnLogin").addEventListener("click", async (e) => {
       let data = await net.login(document.getElementById("userName").value);
 
@@ -113,7 +117,6 @@ class Ui {
       document.getElementById("waitingDialog").style.display = "flex";
       document.getElementById("enemyTimeCounter").innerHTML = time;
     } else {
-      console.log("MIALEM WYLACZYC");
       document.getElementById("waitingDialog").style.display = "none";
     }
   };

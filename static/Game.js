@@ -140,6 +140,7 @@ class Game {
 
   render = () => {
     requestAnimationFrame(this.render);
+    this.camera.updateProjectionMatrix();
     this.renderer.render(this.scene, this.camera);
     TWEEN.update();
   };
@@ -854,6 +855,7 @@ class Game {
           }).length != 0
         ) {
           clearInterval(this.ownTime);
+          ui.updateTimeLeftForMakeMove(false, 30);
 
           possibleMovesQueen.forEach((move) => {
             move.items.forEach((item) => {
@@ -1175,8 +1177,11 @@ class Game {
   countDownOwnTime = () => {
     let timeCounter = 30;
     ui.updateTimeLeftForMakeMove(true, timeCounter);
+    ui.updateTimeLeftForUser(false, 30);
+
     this.ownTime = setInterval(() => {
       timeCounter--;
+      ui.updateTimeLeftForUser(false, 30);
       ui.updateTimeLeftForMakeMove(true, timeCounter);
       if (timeCounter == 0) {
         ui.infoAboutWinningOrLosing(
@@ -1187,6 +1192,13 @@ class Game {
         clearInterval(this.ownTime);
       }
     }, 1000);
+  };
+
+  onWindowResize = () => {
+    this.camera.aspect = window.innerWidth / window.innerHeight;
+    this.camera.updateProjectionMatrix();
+
+    this.renderer.setSize(window.innerWidth, window.innerHeight);
   };
 }
 
