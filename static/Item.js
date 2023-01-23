@@ -1,6 +1,6 @@
 class Item extends THREE.Mesh {
   constructor(isWhite, numberToId) {
-    super(); // wywołanie konstruktora klasy z której dziedziczymy czyli z Mesha
+    super();
     this.geometry = new THREE.BoxGeometry(30, 10, 30);
     this.elementType = "item";
 

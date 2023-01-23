@@ -14,9 +14,11 @@ class Ui {
       if (data.hasOwnProperty("userName")) {
         document.getElementById(
           "navbar"
-        ).innerHTML = `<div>USER_ADDED</div><div>Witaj <span style="font-weight: bold; color: green;">${
+        ).innerHTML = `<div>USER_ADDED</div><div>Welcome <span style="font-weight: bold; color: green;">${
           data.userName
-        }</span>, grasz ${data.userColor == 1 ? "białymi" : "czarnymi"}</div>`;
+        }</span>, your pieces are ${
+          data.userColor == 1 ? "white" : "black"
+        }</div>`;
 
         game.loadPiece(data.userColor);
 
@@ -35,7 +37,7 @@ class Ui {
               game.countDownOwnTime();
             } else {
               document.getElementById("loginDialog").innerHTML =
-                "CZEKAJ NA DRUGIEGO GRACZA";
+                "WAITING FOR THE SECOND PLAYER...";
             }
           }, 500);
         } else {
@@ -49,7 +51,7 @@ class Ui {
           data.userColor == 1 ? "bialy" : "czarny"
         );
         document.getElementById("mainWaitingDialogInfo").innerHTML =
-          "Ruch ma przeciwnik";
+          "Enemy's turn...";
       } else {
         alert(data.errorMessage);
       }
