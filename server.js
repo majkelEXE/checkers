@@ -58,6 +58,8 @@ app.post("/uploadChanges", function (req, res) {
   //   }
   // }
 
+  //dziala?
+
   //USUNIECIE ZBITEGO Z TABLICY
   if (req.body.zbityName != undefined) {
     currentTab[req.body.zbityX][req.body.zbityY] = 0;
